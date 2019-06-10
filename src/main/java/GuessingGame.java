@@ -1,17 +1,17 @@
 
 public class GuessingGame {
 
-public String playGame(int guess){
-	if (guess > 7){
-		return "Too High";
-		
-	}if (guess < 7){
-		return "Too Low";
-		 
-	}if (guess != 7){
-		return "You Lose";
-		
-	}else {
-		return "You Win";}}}
-				
-			
+	public String playGame(int guessedNumber) {
+		int secretNumber = 7;
+
+		if (guessedNumber > secretNumber) {
+			return "Too High!";
+		} else if (guessedNumber < secretNumber) {
+			return "Too Low!";
+		} else {
+			return "You Win!";
+		}
+
+	}
+
+}

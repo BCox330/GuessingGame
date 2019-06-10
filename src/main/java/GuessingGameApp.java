@@ -3,33 +3,33 @@ import java.util.Scanner;
 public class GuessingGameApp {
 
 	public static void main(String[] args) {
-		Scanner keyboardInput = new Scanner(System.in);
-		
+
 		int secretNumber = 7;
-		String guess = "";
-		int guessCount = 0;
-		int guessLimit = 3;
-		boolean outOfGuesses = false;
+		int guess;
+		boolean correct = false;
+
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Welcome to Guessing Game");
+		System.out.print("Guess a number between 1 and 10: ");
+
+
+		while (!correct) {
+
 		
-		
-		while(!guess.equals(secretNumber) && !outOfGuesses) {
-			if(guessCount < guessLimit){
-				System.out.print("Guess a Number 1 through 10: ");
-				guess = keyboardInput.nextLine();
-				guessCount++;
-			}else {
-				outOfGuesses = true;
-				}
-			
+			guess = keyboard.nextInt();
+			if (guess == secretNumber) {
+				correct = true;
+				System.out.println("You Win");
+			}
+
+			else if (guess < secretNumber) {
+				System.out.println("Guess Higher");
+			}
+
+			else if (guess > secretNumber) {
+				System.out.println("Guess Lower");
+			}
 		}
-		if(outOfGuesses){
-			System.out.println("You Lose");
-		}else {
-			System.out.println("You Win");
-		}
-		
 	}
+
 }
-	
-
-
